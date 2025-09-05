@@ -5,9 +5,8 @@ public class App {
         sign(-5);
         describe(2);
         order2(10,5);
-        order3(6,1,3);
+        order3(3,2,1);
         line(2,5);
-        table10(10); //tekee metodin parametrin verran kertotauluja
         check("java123");
         
         String passTries[] = {"java123114", "java1233","java123"};
@@ -15,7 +14,8 @@ public class App {
         
         int luvut[] = {11,131,1,4,6,6,5,9};
         average(luvut);
-        max(luvut);
+       max(luvut);
+      
 
 }
 
@@ -108,12 +108,17 @@ static String order2(int a,int b){
 }
 
 static String order3(int a,int b,int c){
-    int min = Math.min(a,b);
-    int max = Math.max(a,b);
-    int mid = (a+b+c)-min-max;
+    
+    int min1 = Math.min(a,b);
+    int max1 = Math.max(a,b);
 
-    String minStr = Integer.toString(min);
-    String maxStr = Integer.toString(max);
+    int minFinal = Math.min(min1,c);
+    int maxFinal = Math.max(max1,c);
+
+    int mid = (a+b+c)-minFinal-maxFinal;
+
+    String minStr = Integer.toString(minFinal);
+    String maxStr = Integer.toString(maxFinal);
     String midStr = Integer.toString(mid);
 
     System.out.println(minStr+" "+midStr+" "+maxStr);
@@ -217,4 +222,7 @@ int n = a.length;
     System.out.println(nykyinenSuurin);
     return nykyinenSuurin;
 }
+   
+    
 }
+
